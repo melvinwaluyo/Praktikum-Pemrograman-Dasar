@@ -1,0 +1,71 @@
+#include <iostream>
+using namespace std;
+
+void lower(int matrix[4][4], int baris, int kolom)
+{
+    int i, j;
+    for (i = 0; i < baris; i++)
+    {
+        for (j = 0; j < kolom; j++)
+        {
+            if (i < j)
+            {
+                cout << "0 ";
+            }
+            else cout << matrix[i][j] << " ";
+        }
+        cout << endl;
+    } 
+}
+void upper(int matrix[4][4], int baris, int kolom)
+{
+    int i, j;
+    for (i = 0; i < baris; i++)
+    {
+        for (j = 0; j < kolom; j++)
+        {
+            if (i > j)
+            {
+                cout << "0 ";
+            }
+            else cout << matrix[i][j] << " ";
+        }
+        cout << endl;
+    } 
+}
+void dia(int matrix[4][4], int baris, int kolom)
+{
+    int i, j;
+    for (i = 0; i < baris; i++)
+    {
+        for (j = 0; j < kolom; j++)
+        {
+            if (i == j)
+            {
+                cout << matrix[i][j] << endl;
+            }
+        } 
+    }
+}
+int main()
+{
+    int matrix[4][4] = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16};
+    int baris = 4, kolom = 4;
+
+    cout << "matrix yang terinput:" << endl;
+    cout << matrix[0][0] << " " << matrix[0][1] << " " << matrix[0][2] << " " << matrix[0][3] << endl;
+    cout << matrix[1][0] << " " << matrix[1][1] << " " << matrix[1][2] << " " << matrix[1][3] << endl;
+    cout << matrix[2][0] << " " << matrix[2][1] << " " << matrix[2][2] << " " << matrix[2][3] << endl;
+    cout << matrix[3][0] << " " << matrix[3][1] << " " << matrix[3][2] << " " << matrix[3][3] << endl;
+
+    cout << "lower triangle matrix is" << endl;
+    lower(matrix, baris, kolom);
+
+    cout << "and upper triangle matrix is" << endl;
+    upper(matrix, baris, kolom);
+
+    cout << "diagonals are" << endl;
+    dia(matrix, baris, kolom);
+
+    return 0;
+}
